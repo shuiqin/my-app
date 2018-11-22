@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>无标题文档</title> 
+</head> 
+
+<body>   
+<form enctype="multipart/form-data" action="sign.php" method="post" name="moblie_act_form" id="moblie_act_form" >    
+<input type="text"  class="input" id="mobile" name="mobile" value="{$mobile}"  readonly="true" disabled="disabled">    
+<input type="button" value="修改" onClick="modify_phone()">       
+</form>    
+</html>    
+<script language="javascript">    
+function modify_phone(){    
+    if(confirm("您确定要修改您的手机号码吗？")){    
+        document.moblie_act_form.mobile.readOnly = false;    
+        document.moblie_act_form.mobile.disabled = false;                    
+    }    
+    return true;    
+}    
+</script>  
+</body> 
+</html> 

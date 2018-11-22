@@ -10,6 +10,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const getClientEnvironment = require('./env');
 const AnalyzeWebpackPlugin = require('analyze-webpack-plugin').default
 const paths = require('./paths'); // TODO
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 const publicPath = '/';
 
@@ -28,7 +29,7 @@ let devConfigs = {
     // require.resolve('react-dev-utils/webpackHotDevClient'), // 这句和上面两句写法二选一
     require.resolve('./polyfills'),
     require.resolve('react-error-overlay'), // 开发报错，将导致启动不了
-    paths.appIndexJs,
+    paths.appIndexJs, //入口页面 配置再paths
   ],
   output: { // https://doc.webpack-china.org/configuration/output/
     path: paths.appBuild, // 开发环境这句没用，但是生成环境要用
@@ -62,7 +63,7 @@ let devConfigs = {
         // 使用第一个规则匹配
         oneOf: [
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/,/\.ico$/,],
             loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
@@ -142,6 +143,7 @@ let devConfigs = {
                 loader: require.resolve('less-loader'),
                 options: {
                   modifyVars: { "@primary-color": "#1890ff" },
+                  javascriptEnabled: true
                 },
               },
             ],

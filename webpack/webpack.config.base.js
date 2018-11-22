@@ -1,10 +1,6 @@
-const autoprefixer = require('autoprefixer');
-const path = require('path')
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-
+const path = require('path');
 const paths = require('./paths');
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 module.exports = {
     resolve: {
@@ -33,6 +29,5 @@ module.exports = {
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
-    },
-      
+    }
 };

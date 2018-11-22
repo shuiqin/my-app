@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .flex-box{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /*justify-content: center;  水平居中 */
+            /*align-items: center;      垂直居中 */
+            height:500px;
+            background-color: #00a2ae;
+        }
+        div{
+            height: 200px;
+            flex-grow: 1;
+            border: 2px solid green;
+            align-self: center;
+            text-align: center;
+        }
+        .flex-container{
+            background-color: #0000AA;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="flex-box">
+        <div>
+            1
+        </div>
+        <div>
+            2
+        </div>
+        <div>
+            3
+        </div>
+    </div>
+    <div>
+        jjjjj
+    </div>
+</div>
+
+
+</body>
+</html>
